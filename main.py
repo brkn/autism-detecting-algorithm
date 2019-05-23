@@ -5,9 +5,11 @@ from train_model import train_model
 from predict import predict
 from write_output import write_output
 
+
 def main():
     test_df, train_df = load_data()
     train_df = preprocess_data(train_df)
+
 
 if __name__ == "__main__":
     main()

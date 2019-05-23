@@ -7,7 +7,12 @@ MIN_VALUE = 0
 def preprocess_data(data):    # Xtra->Xtra^new
     data = remove_noise(data)
     data = remove_columns_with_single_unique_value(data)
-    return data
+
+    if not "class" in data:
+        return data
+
+    x, y = split_data(data)
+    return x, y
 
 
 def remove_noise(data):
@@ -22,4 +27,12 @@ def remove_columns_with_single_unique_value(data):
     nunique_datas = data.apply(pd.Series.nunique)
     cols_to_drop = nunique_datas[nunique_datas == 1].index
     data.drop(cols_to_drop, axis=1)
+
     return data
+
+
+def split_data(data):
+    y = data["class"]
+    x = data.drop(y.index)
+
+    return x, y

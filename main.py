@@ -9,7 +9,8 @@ from write_output import write_output
 
 def main():
     test_df, train_df = load_data()
-    train_df = preprocess_data(train_df)
+    train_x, train_y = preprocess_data(train_df)
+    test_x = preprocess_data(test_df)
 
 
 if __name__ == "__main__":

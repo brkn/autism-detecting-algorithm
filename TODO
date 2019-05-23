@@ -15,7 +15,7 @@ To fix your pleb settings
     press cmd+s to save.
 */
 Code related:
-    ☐ Read csv files @created(23-05-19 20:39)
+    ✔ Read csv files @created(23-05-19 20:39) @done(23-05-19 23:19)
         @Damla falan
     ✔ Pre processing @created(23-05-19 20:39) @done(23-05-19 22:09)
         @Berkan
@@ -27,10 +27,10 @@ Code related:
 
     ☐ Prediction @created(23-05-19 20:54)
 
-    ☐ Output @created(23-05-19 20:54)
-
-
-
+    ☐ Output function @created(23-05-19 20:54)
+        @Berkan 
+        ✔ Get the latest filename @created(23-05-19 23:08) @done(23-05-19 23:18)
+        
 Report:
     @Damla
     ☐ Read IEEE standarts and write a little summary @created(23-05-19 20:40)

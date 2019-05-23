@@ -14,12 +14,16 @@ def get_latest_filename():
     current_working_dir = os.getcwd()
     submissions_directory = f"{current_working_dir}/submissions"
 
-    files_array = []
+    numbers = []
     for _, _, files in os.walk(submissions_directory):
         if not files:
             return f"{current_working_dir}/submissions/submission_1.csv"
         for file in files:
             if "submission" in file:
-                files_array.append(file.split(".")[0])
-    new_sub_number = int(files_array[-1].split("_")[1]) + 1
-    return f"{current_working_dir}/submissions/submission_{str(new_sub_number)}.csv"
+                numbers.append(int(file.split(".")[0].split("_")[1]))
+    numbers.sort()
+    new_file_number = int(numbers[-1]) + 1
+    return f"{current_working_dir}/submissions/submission_{str(new_file_number)}.csv"
+
+
+write_output("")

@@ -17,7 +17,7 @@ To fix your pleb settings
 Code related:
     ☐ Read csv files @created(23-05-19 20:39)
         @Damla falan
-    ☐ Pre processing @created(23-05-19 20:39)
+    ✔ Pre processing @created(23-05-19 20:39) @done(23-05-19 22:09)
         @Berkan
         ✔ drop outlier rows with remove_noise function @created(23-05-19 21:32) @done(23-05-19 21:34)
 

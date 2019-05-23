@@ -8,7 +8,7 @@ def write_output(prediction_data):  # ->submission.csv
         write_file.write("ID,Predicted\n")
         for id, number in enumerate(prediction_data):
             write_file.write(f"{str(id+1)},{number}\n")
-
+    return latest_file_directory
 
 def get_latest_filename():
     current_working_dir = os.getcwd()

@@ -7,7 +7,7 @@ from write_output import write_output
 
 def main():
     test_df, train_df = load_data()
-    preprocess_data(train_df, test_df)
+    train_df = preprocess_data(train_df)
 
 if __name__ == "__main__":
     main()

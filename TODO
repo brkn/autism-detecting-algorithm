@@ -19,6 +19,7 @@ Code related:
         @Damla falan
     ☐ Pre processing @created(23-05-19 20:39)
         @Berkan
+        ✔ drop outlier rows with remove_noise function @created(23-05-19 21:32) @done(23-05-19 21:34)
 
     ☐ Create model @created(23-05-19 20:55)
     

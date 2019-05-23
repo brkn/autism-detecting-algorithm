@@ -3,6 +3,16 @@ To use TODO+ extension, download TODO+. Then;
     Press cmd+enter to create new todo task
     Press alt+d to mark task done, press again to unmark.
     Press alt+c to mark task cancelled, press again to uncancel.
+To fix your pleb settings
+    press cmd+shift+p
+    then type json
+    select Preferences: Open Settings (JSON)
+    paste the following
+        "todo.timekeeping.created.enabled": true,
+        "todo.timekeeping.created.format": "DD-MM-YY HH:mm",
+        "todo.timekeeping.finished.format": "DD-MM-YY HH:mm",
+        "todo.timekeeping.elapsed.enabled": false,
+    press cmd+s to save.
 */
 Code related:
     ☐ Read csv files @created(23-05-19 20:39)

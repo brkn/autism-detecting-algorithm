@@ -9,10 +9,10 @@ def preprocess_data(data):    # Xtra->Xtra^new
     data = remove_columns_with_single_unique_value(data)
 
     if not "class" in data:
-        return data
+        return data.values
 
     x, y = split_data(data)
-    return x, y
+    return x.values, y.values
 
 
 def remove_noise(data):
@@ -33,6 +33,7 @@ def remove_columns_with_single_unique_value(data):
 
 def split_data(data):
     y = data["class"]
-    x = data.drop(y.index)
+    x = data
+    x = data.drop("class", axis=1)
 
     return x, y

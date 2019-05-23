@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from load_data import load_data
 from preprocess_data import preprocess_data
 from create_model import create_model

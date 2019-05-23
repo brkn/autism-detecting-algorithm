@@ -13,7 +13,8 @@ def main():
 
     model = create_model(train_x.shape[1])
     train_model(model, train_x, train_y)
-    predict_data(model, test_x)
+    predictions = predict_data(model, test_x)
+    write_output(predictions)
 
 
 if __name__ == "__main__":

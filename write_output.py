@@ -24,6 +24,3 @@ def get_latest_filename():
     numbers.sort()
     new_file_number = int(numbers[-1]) + 1
     return f"{current_working_dir}/submissions/submission_{str(new_file_number)}.csv"
-
-
-write_output("")

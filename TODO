@@ -21,11 +21,11 @@ Code related:
         @Berkan
         ✔ drop outlier rows with remove_noise function @created(23-05-19 21:32) @done(23-05-19 21:34)
 
-    ☐ Create model @created(23-05-19 20:55)
+    ✔ Create model @created(23-05-19 20:55) @done(25-05-19 18:36)
     
-    ☐ Training function @created(23-05-19 20:40)
+    ✔ Training function @created(23-05-19 20:40) @done(25-05-19 18:36)
 
-    ☐ Prediction @created(23-05-19 20:54)
+    ✔ Prediction @created(23-05-19 20:54) @done(25-05-19 18:36)
 
     ✔ Output function @created(23-05-19 20:54) @done(24-05-19 00:13)
         @Berkan 
@@ -40,3 +40,19 @@ Report:
 Kaggle API:
     @Berkan
     ✔ Add a python script to upload submission to kaggle with api @created(23-05-19 23:21) @done(24-05-19 00:31)
+    To use Kaggle api
+        For windows
+            follow kaggle documentation: https://github.com/Kaggle/kaggle-api
+        For linux and mac:
+            Run pip3 install kaggle --upgrade
+            Download your json at
+                https://www.kaggle.com/<username>/account
+                press the button "Create New API Token"
+            open download directory in finder/fileManager
+            To move the kaggle.json
+                Run this on terminal
+                    open ~/.kaggle/
+                Move the kaggle.json there.
+        For windows:
+            Read the api documentation i dont care lmao.
+                https://github.com/Kaggle/kaggle-api

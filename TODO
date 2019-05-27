@@ -36,6 +36,9 @@ Code related:
         ✔ Change remove_single_value_columns with remove_low_variance_columns @created(25-05-19 19:04) @done(27-05-19 21:33)
         ☐ Try select k best function @created(25-05-19 19:05)
 
+    Before submitting to ninova:
+        ☐ @critical Remove all comments @created(27-05-19 21:34) 
+
 Report:
     @Damla
     ☐ Read IEEE standarts and write a little summary @created(23-05-19 20:40)

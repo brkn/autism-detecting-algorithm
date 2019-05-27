@@ -7,4 +7,3 @@ def predict_data(model, test_x):  # model&Xtst
         else:
             predictions_rounded.append(0)
     return predictions_rounded
-

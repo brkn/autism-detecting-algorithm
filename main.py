@@ -10,15 +10,15 @@ from submit_latest_file import submit_to_kaggle
 
 def main():
     test_df, train_df = load_data()
-    train_x, train_y = preprocess_data(train_df)
-    test_x = preprocess_data(test_df)
+
+    train_x, train_y, new_indices = preprocess_data(train_df)
+    test_x = preprocess_data(test_df, new_indices)
 
     model = create_model(train_x.shape[1])
     train_model(model, train_x, train_y)
     predictions = predict_data(model, test_x)
 
     submission_file_directory = write_output(predictions)
-
     submit_to_kaggle(submission_file_directory)
 
 

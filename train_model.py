@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np # To Ömer: We don't use this import?
 
 
 def train_model(model, X_train, y_train):   # Xtra || Xtra^new->model

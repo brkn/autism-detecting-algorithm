@@ -7,7 +7,7 @@ MIN_VALUE = 0
 def preprocess_data(data, new_indices=None):    # Xtra->Xtra^new
     data = remove_noise(data)
 
-    if not "class" in data:
+    if isDataTest(data):
         data, _ = remove_columns_with_low_variance(data, new_indices)
         return data.values
     else:
@@ -54,3 +54,8 @@ def split_data(data):
     x = data.drop("class", axis=1)
 
     return x, y
+
+
+def isDataTest(data):
+    isDataTraining = "class" in data
+    return not isDataTraining

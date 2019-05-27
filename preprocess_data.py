@@ -7,7 +7,7 @@ MIN_VALUE = 0
 def preprocess_data(data, new_indices=None):    # Xtra->Xtra^new
     data = remove_noise(data)
 
-    if isDataTest(data):
+    if isDataTestData(data):
         data, _ = remove_columns_with_low_variance(data, new_indices)
         return data.values
     else:
@@ -34,7 +34,7 @@ def remove_columns_with_low_variance(data, new_indices=[], threshold=(0.001)):
 
     print(data.shape)
 
-    if(len(new_indices)):
+    if isDataTestData(data):
         new_indices = new_indices[new_indices != 595]
     else:
         selector = VarianceThreshold(threshold)
@@ -56,6 +56,11 @@ def split_data(data):
     return x, y
 
 
-def isDataTest(data):
+def isDataTestData(data):
+    isDataTest = not "class" in data
+    return isDataTest
+
+
+def isDataTrainingData(data):
     isDataTraining = "class" in data
-    return not isDataTraining
+    return isDataTraining

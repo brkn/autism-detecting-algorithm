@@ -1,4 +1,4 @@
-from train_model import MODEL_TYPES
+from create_model import MODEL_TYPES
 
 
 def predict_data(model, model_type, test_x):  # model&Xtst
@@ -13,6 +13,9 @@ def predict_data(model, model_type, test_x):  # model&Xtst
                 predictions_rounded.append(0)
 
     elif model_type == MODEL_TYPES["SUPPORT_VECTOR_MACHINE"]:
+        predictions_rounded = model.predict(test_x)
+
+    elif model_type == MODEL_TYPES["KERNEL_SVM"]:
         predictions_rounded = model.predict(test_x)
 
     return predictions_rounded

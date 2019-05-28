@@ -1,4 +1,8 @@
+import numpy as np
+from sklearn.feature_selection import chi2
+from sklearn.feature_selection import SelectKBest
 import pandas as pd
+from sklearn.feature_selection import VarianceThreshold
 
 MAX_VALUE = 1
 MIN_VALUE = 0
@@ -13,6 +17,7 @@ def preprocess_data(data, new_indices=None):    # Xtra->Xtra^new
     else:
         data, new_indices = remove_columns_with_low_variance(data)
         x, y = split_data(data)
+        x, new_indices = select_k_best_features(x, y)
         return x.values, y.values, new_indices
 
 
@@ -30,7 +35,6 @@ def remove_noise(data):
 
 
 def remove_columns_with_low_variance(data, new_indices=[], threshold=(0.001)):
-    from sklearn.feature_selection import VarianceThreshold
 
     print(data.shape)
 
@@ -44,6 +48,18 @@ def remove_columns_with_low_variance(data, new_indices=[], threshold=(0.001)):
     new_data = data[data.columns[new_indices]]
 
     print(new_data.shape)
+
+    return new_data, new_indices
+
+
+def select_k_best_features(train_x, train_y, k=20):
+    selector = SelectKBest(score_func=chi2, k=k)
+    fitted_selector = selector.fit(train_x, train_y)
+    new_indices = fitted_selector.get_support(indices=True)
+
+    new_data = train_x[train_x.columns[new_indices]]
+
+    print_k_best_features(train_x, fitted_selector, k)
 
     return new_data, new_indices
 
@@ -64,3 +80,9 @@ def isDataTestData(data):
 def isDataTrainingData(data):
     isDataTraining = "class" in data
     return isDataTraining
+
+
+def print_k_best_features(train_x, fitted_selector, k):
+    dfscores = pd.DataFrame(fitted_selector.scores_)
+    dfscores.columns = ['Score']
+    print(dfscores.nlargest(k, 'Score'))

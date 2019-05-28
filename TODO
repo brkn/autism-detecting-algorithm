@@ -33,9 +33,11 @@ Code related:
         ✔ Fix output function @created(24-05-19 00:13) @done(24-05-19 00:13)
     
     ☐ Feature selection @created(25-05-19 19:05)
+        @Berkan
         ✔ Change remove_single_value_columns with remove_low_variance_columns @created(25-05-19 19:04) @done(27-05-19 21:33)
-        ☐ Try select k best function @created(25-05-19 19:05)
-            ☐ Try best 15 @created(28-05-19 18:57)
+        ✔ Try select k best function @created(25-05-19 19:05) @done(28-05-19 22:39)
+            ✔ Try best 15 @created(28-05-19 18:57) @done(28-05-19 22:39)
+                Decided 20 is better.
 
     ☐ `How_to_run.txt` file @created(28-05-19 18:23)
         This is needed for submitting to ninova.

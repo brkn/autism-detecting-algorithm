@@ -11,15 +11,14 @@ MIN_VALUE = 0
 def preprocess_data(data, new_indices=None):    # Xtra->Xtra^new
     data = remove_noise(data)
 
-    if isDataTestData(data):
-        data, _ = remove_columns_with_low_variance(data, new_indices)
-        return data.values
-    else:
+    if isDataTrainingData(data):
         data, new_indices = remove_columns_with_low_variance(data)
         x, y = split_data(data)
         x, new_indices = select_k_best_features(x, y)
         return x.values, y.values, new_indices
-
+    else:
+        data, _ = remove_columns_with_low_variance(data, new_indices)
+        return data.values
 
 def remove_noise(data):
     print(data.shape)

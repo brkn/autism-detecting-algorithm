@@ -60,6 +60,7 @@ def select_k_best_features(train_x, train_y, k=20):
     new_data = train_x[train_x.columns[new_indices]]
 
     # print_k_best_features(fitted_selector, k)
+    # print(new_data.shape)
 
     return new_data, new_indices
 

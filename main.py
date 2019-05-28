@@ -15,8 +15,8 @@ def main():
     test_x = preprocess_data(test_df, new_indices)
 
     model = create_model(train_x.shape[1])
-    train_model(model, 2, train_x, train_y)
-    predictions = predict_data(model, 2, test_x)
+    train_model(model, 1, train_x, train_y)
+    predictions = predict_data(model, 1, test_x)
 
     submission_file_directory = write_output(predictions)
     submit_to_kaggle(submission_file_directory)

@@ -11,3 +11,6 @@ def train_model(model, model_type, X_train, y_train):   # Xtra || Xtra^new->mode
 
     elif model_type == MODEL_TYPES["KERNEL_SVM"]:
         model.fit(X_train, y_train)
+
+    elif model_type == MODEL_TYPES["GAUSSIAN_SVM"]:
+        model.fit(X_train, y_train)

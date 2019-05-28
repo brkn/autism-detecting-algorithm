@@ -6,9 +6,7 @@ from keras.layers import Dense, Dropout
 
 def create_model(input_shape):
     # model = get_neural_network_model(input_shape) # This was the first try for a model
-
-    model = get_non_linear_support_vector_machine_model(input_shape)
-
+    model = get_support_vector_machine_model(input_shape) # Second model
     return model
 
 
@@ -25,5 +23,5 @@ def get_neural_network_model(input_shape):
     return model
 
 
-def get_non_linear_support_vector_machine_model(input_shape):
+def get_support_vector_machine_model(input_shape):
     pass

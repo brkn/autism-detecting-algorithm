@@ -22,21 +22,21 @@ def preprocess_data(data, new_indices=None):    # Xtra->Xtra^new
 
 
 def remove_noise(data):
-    print(data.shape)
+    # print(data.shape)
 
     for column_name in data:
         if data[column_name].max() > MAX_VALUE or data[column_name].min() < MIN_VALUE:
             data = data.drop(
                 data[data[column_name] < MIN_VALUE or data[column_name] > MAX_VALUE].index)
 
-    print(data.shape)
+    # print(data.shape)
 
     return data
 
 
 def remove_columns_with_low_variance(data, new_indices=[], threshold=(0.001)):
 
-    print(data.shape)
+    # print(data.shape)
 
     if isDataTestData(data):
         new_indices = new_indices[new_indices != 595]
@@ -47,7 +47,7 @@ def remove_columns_with_low_variance(data, new_indices=[], threshold=(0.001)):
 
     new_data = data[data.columns[new_indices]]
 
-    print(new_data.shape)
+    # print(new_data.shape)
 
     return new_data, new_indices
 
@@ -59,7 +59,7 @@ def select_k_best_features(train_x, train_y, k=20):
 
     new_data = train_x[train_x.columns[new_indices]]
 
-    print_k_best_features(fitted_selector, k)
+    # print_k_best_features(fitted_selector, k)
 
     return new_data, new_indices
 

@@ -20,6 +20,7 @@ def preprocess_data(data, new_indices=None):    # Xtra->Xtra^new
         data, _ = remove_columns_with_low_variance(data, new_indices)
         return data.values
 
+
 def remove_noise(data):
     print(data.shape)
 
@@ -58,7 +59,7 @@ def select_k_best_features(train_x, train_y, k=20):
 
     new_data = train_x[train_x.columns[new_indices]]
 
-    print_k_best_features(train_x, fitted_selector, k)
+    print_k_best_features(fitted_selector, k)
 
     return new_data, new_indices
 
@@ -81,7 +82,7 @@ def isDataTrainingData(data):
     return isDataTraining
 
 
-def print_k_best_features(train_x, fitted_selector, k):
+def print_k_best_features(fitted_selector, k):
     dfscores = pd.DataFrame(fitted_selector.scores_)
     dfscores.columns = ['Score']
     print(dfscores.nlargest(k, 'Score'))

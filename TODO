@@ -16,7 +16,7 @@ To fix your pleb settings
 */
 Code related:
     ✔ Read csv files @created(23-05-19 20:39) @done(23-05-19 23:19)
-        @Damla falan
+        @Damla
     ✔ Pre processing @created(23-05-19 20:39) @done(23-05-19 22:09)
         @Berkan
         ✔ drop outlier rows with remove_noise function @created(23-05-19 21:32) @done(23-05-19 21:34)
@@ -35,6 +35,11 @@ Code related:
     ☐ Feature selection @created(25-05-19 19:05)
         ✔ Change remove_single_value_columns with remove_low_variance_columns @created(25-05-19 19:04) @done(27-05-19 21:33)
         ☐ Try select k best function @created(25-05-19 19:05)
+            ☐ Try best 15 @created(28-05-19 18:57)
+
+    ☐ `How_to_run.txt` file @created(28-05-19 18:23)
+        This is needed for submitting to ninova.
+        "You must provide a `How_to_run.txt` which explains how to run your code."
 
     Before submitting to ninova:
         ☐ @critical Remove all comments @created(27-05-19 21:34) 

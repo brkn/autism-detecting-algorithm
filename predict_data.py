@@ -21,4 +21,7 @@ def predict_data(model, model_type, test_x):  # model&Xtst
     elif model_type == MODEL_TYPES["GAUSSIAN_SVM"]:
         predictions_rounded = model.predict(test_x)
 
+    elif model_type == MODEL_TYPES["RBF_SVM"]:
+        predictions_rounded = model.predict(test_x)
+
     return predictions_rounded

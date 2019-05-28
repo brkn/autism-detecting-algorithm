@@ -15,7 +15,7 @@ def main():
     test_x = preprocess_data(test_df, new_indices)
 
     model = create_model(train_x.shape[1])
-    train_model(model, train_x, train_y)
+    train_model(model, 1, train_x, train_y)
     predictions = predict_data(model, test_x)
 
     submission_file_directory = write_output(predictions)

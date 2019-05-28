@@ -16,7 +16,7 @@ def main():
 
     model = create_model(train_x.shape[1])
     train_model(model, 1, train_x, train_y)
-    predictions = predict_data(model, test_x)
+    predictions = predict_data(model, 1, test_x)
 
     submission_file_directory = write_output(predictions)
     submit_to_kaggle(submission_file_directory)

@@ -10,7 +10,7 @@ LABEL_COLUMN_INDICE = 595
 
 
 def preprocess_data(data, new_indices=None):    # Xtra->Xtra^new
-    data = remove_noise(data)
+    data = remove_noise_and_outliers(data)
 
     if isDataTrainingData(data):
         data, new_indices = remove_columns_with_low_variance(data)
@@ -18,14 +18,13 @@ def preprocess_data(data, new_indices=None):    # Xtra->Xtra^new
         x, new_indices = select_k_best_features(x, y)
         return x.values, y.values, new_indices
 
-    else:
+    elif isDataTestData(data):
         data = apply_mask_to_data(data, new_indices)
         return data.values
 
 
-def remove_noise(data):
+def remove_noise_and_outliers(data):
     # print(data.shape)
-
     for column_name in data:
         if data[column_name].max() > MAX_VALUE or data[column_name].min() < MIN_VALUE:
             data = data.drop(

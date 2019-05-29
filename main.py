@@ -7,6 +7,8 @@ from predict_data import predict_data
 from write_output import write_output
 from submit_latest_file import submit_to_kaggle
 
+MODEL_TYPE = 0  # NEURAL_NETWORK
+
 
 def main():
     test_df, train_df = load_data()
@@ -14,9 +16,9 @@ def main():
     train_x, train_y, indices_for_masking = preprocess_data(train_df)
     test_x = preprocess_data(test_df, indices_for_masking)
 
-    model = create_model(train_x.shape[1])
-    train_model(model, 2, train_x, train_y)
-    predictions = predict_data(model, 2, test_x)
+    model = create_model(train_x.shape[1], MODEL_TYPE)
+    train_model(model, MODEL_TYPE, train_x, train_y)
+    predictions = predict_data(model, MODEL_TYPE, test_x)
 
     submission_file_directory = write_output(predictions)
     submit_to_kaggle(submission_file_directory)

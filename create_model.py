@@ -4,7 +4,6 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from sklearn.svm import SVC
 
-
 MODEL_TYPES = {
     "NEURAL_NETWORK": 0,
     "SUPPORT_VECTOR_MACHINE": 1,
@@ -14,12 +13,22 @@ MODEL_TYPES = {
 }
 
 
-def create_model(input_shape):
-    # model = get_neural_network_model(input_shape) # Model #0
-    model = get_support_vector_machine_model()  # Model #1
-    # model = get_kernel_SVM_model()    # Model #2
-    # model = get_gaussian_SVM_model()  # Model #3
-    # model = get_rbf_SVM_model() # Model #4
+def create_model(input_shape, model_type):
+    if model_type == MODEL_TYPES["NEURAL_NETWORK"]:
+        model = get_neural_network_model(input_shape)  # Model #0
+
+    elif model_type == MODEL_TYPES["SUPPORT_VECTOR_MACHINE"]:
+        model = get_support_vector_machine_model()  # Model #1
+
+    elif model_type == MODEL_TYPES["KERNEL_SVM"]:
+        model = get_kernel_SVM_model()    # Model #2
+
+    elif model_type == MODEL_TYPES["GAUSSIAN_SVM"]:
+        model = get_gaussian_SVM_model()  # Model #3
+
+    elif model_type == MODEL_TYPES["RBF_SVM"]:
+        model = get_rbf_SVM_model()  # Model #4
+
     return model
 
 

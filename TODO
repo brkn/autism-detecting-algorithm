@@ -20,7 +20,7 @@ Code related:
     ✔ Pre processing @created(23-05-19 20:39) @done(23-05-19 22:09)
         @Berkan
         ✔ drop outlier rows with remove_noise function @created(23-05-19 21:32) @done(23-05-19 21:34)
-        ☐ Add apply_indices_mask function @created(30-05-19 02:25)
+        ✔ Add apply_indices_mask function @created(30-05-19 02:25) @done(30-05-19 02:34)
 
     ✔ Create model @created(23-05-19 20:55) @done(25-05-19 18:36)
     

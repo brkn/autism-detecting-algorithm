@@ -43,7 +43,7 @@ Code related:
         ✔ Try feature extraction @created(30-05-19 02:24) @done(30-05-19 05:05)
             ✔ Fix PCA error @created(30-05-19 05:22) @done(30-05-19 05:22)
             
-    ☐ `How_to_run.txt` file @created(28-05-19 18:23)
+    ✔ `How_to_run.txt` file @created(28-05-19 18:23) @done(30-05-19 06:56)
         This is needed for submitting to ninova.
         "You must provide a `How_to_run.txt` which explains how to run your code."
 
@@ -54,6 +54,15 @@ Report:
     @Damla
     ☐ Read IEEE standarts and write a little summary @created(23-05-19 20:40)
     ☐ Write report @created(23-05-19 20:39)
+
+Submitting:
+    @Damla?
+    ☐ Zip every file + report @created(30-05-19 06:57)
+        ☐ except homework-related folder, @created(30-05-19 07:00)
+        ☐ .gitignore, @created(30-05-19 07:00)
+        ☐ README.md @created(30-05-19 07:00)
+        ☐ and definetely this TODO file @created(30-05-19 07:00)
+    ☐ Make sure zip has How_to_run.txt @created(30-05-19 06:58)
 
 Kaggle API:
     @Berkan

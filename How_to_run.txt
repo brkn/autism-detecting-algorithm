@@ -4,6 +4,8 @@ Step1:
         pandas
         keras
         sklearn
+    or you could run:
+        pip3 install -r requirements.txt
 
 Step2:
     (make sure you didn't move the ./data folder/directory)

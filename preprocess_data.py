@@ -9,7 +9,7 @@ MAX_VALUE = 1
 MIN_VALUE = 0
 LABEL_COLUMN_INDICE = 595
 NUMBER_OF_BEST_FEATURES = 15
-PCA_VARIANCE_PERCENTAGE = 0.90
+PCA_VARIANCE_PERCENTAGE = 0.95
 
 
 def preprocess_data(data, new_indices=None, pca_instance=None, scaler_instance=None):    # Xtra->Xtra^new

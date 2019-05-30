@@ -21,6 +21,7 @@ Code related:
         @Berkan
         ✔ drop outlier rows with remove_noise function @created(23-05-19 21:32) @done(23-05-19 21:34)
         ✔ Add apply_indices_mask function @created(30-05-19 02:25) @done(30-05-19 02:34)
+        ☐ Merge test and train process @created(30-05-19 05:06)
 
     ✔ Create model @created(23-05-19 20:55) @done(25-05-19 18:36)
     
@@ -33,14 +34,15 @@ Code related:
         ✔ Get the latest filename @created(23-05-19 23:08) @done(23-05-19 23:18)
         ✔ Fix output function @created(24-05-19 00:13) @done(24-05-19 00:13)
     
-    ☐ Feature selection @created(25-05-19 19:05)
+    ✔ Feature selection @created(25-05-19 19:05) @done(30-05-19 05:06)
         @Berkan
         ✔ Change remove_single_value_columns with remove_low_variance_columns @created(25-05-19 19:04) @done(27-05-19 21:33)
         ✔ Try select k best function @created(25-05-19 19:05) @done(28-05-19 22:39)
             ✔ Try best 15 @created(28-05-19 18:57) @done(28-05-19 22:39)
                 Decided 20 is better.
-        ☐ Try feature extraction @created(30-05-19 02:24)
-
+        ✔ Try feature extraction @created(30-05-19 02:24) @done(30-05-19 05:05)
+            ✔ Fix PCA error @created(30-05-19 05:22) @done(30-05-19 05:22)
+            
     ☐ `How_to_run.txt` file @created(28-05-19 18:23)
         This is needed for submitting to ninova.
         "You must provide a `How_to_run.txt` which explains how to run your code."

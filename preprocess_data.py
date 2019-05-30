@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 # from sklearn.feature_selection import chi2
 from sklearn.feature_selection import SelectKBest
-# from sklearn.feature_selection import VarianceThreshold
+from sklearn.feature_selection import VarianceThreshold
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
@@ -102,9 +102,13 @@ def get_principal_components(data, pca_instance=None):
         pca_instance = PCA()
         pca_instance.fit(data)
 
-    pca_instance.transform(data)
+    pca_array = pca_instance.transform(data)
 
-    return data, pca_instance
+    new_columns = ['pca_%i' % i for i in range(pca_array.shape[1])]
+    new_data = pd.DataFrame(
+        pca_array, index=data.index, columns=new_columns)
+
+    return new_data, pca_instance
 
 
 def get_scaled_data(data, scaler_instance=None):

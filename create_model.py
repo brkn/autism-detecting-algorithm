@@ -11,6 +11,7 @@ MODEL_TYPES = {
     "GAUSSIAN_SVM": 3,
     "RBF_SVM": 4,
 }
+C_VALUE_FOR_SVM = 1E4
 
 
 def create_model(input_shape, model_type):
@@ -46,20 +47,20 @@ def get_neural_network_model(input_shape):
 
 
 def get_support_vector_machine_model():
-    model = SVC(kernel='linear', C=1E10)
+    model = SVC(kernel='linear', C=C_VALUE_FOR_SVM)
     return model
 
 
 def get_kernel_SVM_model():
-    model = SVC(kernel='poly', degree=8, C=1E10)
+    model = SVC(kernel='poly', degree=8, C=C_VALUE_FOR_SVM)
     return model
 
 
 def get_gaussian_SVM_model():
-    model = SVC(kernel='gaussian', C=1E10)
+    model = SVC(kernel='gaussian', C=C_VALUE_FOR_SVM)
     return model
 
 
 def get_rbf_SVM_model():
-    model = SVC(kernel='rbf', C=1E10)
+    model = SVC(kernel='rbf', C=C_VALUE_FOR_SVM)
     return model

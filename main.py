@@ -7,7 +7,7 @@ from predict_data import predict_data
 from write_output import write_output
 from submit_latest_file import submit_to_kaggle
 
-MODEL_TYPE = 1  # NEURAL_NETWORK
+MODEL_TYPE = 1  # SUPPORT_VECTOR_MACHINE model
 
 
 def main():

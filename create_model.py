@@ -11,7 +11,7 @@ MODEL_TYPES = {
     "GAUSSIAN_SVM": 3,
     "RBF_SVM": 4,
 }
-C_VALUE_FOR_SVM = 1E4
+C_VALUE_FOR_SVM = 1200
 
 
 def create_model(input_shape, model_type):

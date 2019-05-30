@@ -1,4 +1,3 @@
-import numpy as np  # To Ömer: We don't use this import?
 from create_model import MODEL_TYPES
 
 

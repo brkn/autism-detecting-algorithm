@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-# from sklearn.feature_selection import chi2
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import VarianceThreshold
 from sklearn.decomposition import PCA
@@ -17,7 +16,6 @@ def preprocess_data(data, new_indices=None, pca_instance=None, scaler_instance=N
     data = remove_noise_and_outliers(data)
 
     if isDataTrainingData(data):
-        # data, new_indices = remove_columns_with_low_variance(data)
         x, y = split_data(data)
         x, scaler_instance = get_scaled_data(data=x)
         x, pca_instance = get_principal_components(data=x)
@@ -32,12 +30,10 @@ def preprocess_data(data, new_indices=None, pca_instance=None, scaler_instance=N
 
 
 def remove_noise_and_outliers(data):
-    # print(data.shape)
     for column_name in data:
         if data[column_name].max() > MAX_VALUE or data[column_name].min() < MIN_VALUE:
             data = data.drop(
                 data[data[column_name] < MIN_VALUE or data[column_name] > MAX_VALUE].index)
-    # print(data.shape)
     return data
 
 
@@ -60,13 +56,12 @@ def select_k_best_features(train_x, train_y, k=NUMBER_OF_BEST_FEATURES):
     new_indices = fitted_selector.get_support(indices=True)
     new_data = train_x[train_x.columns[new_indices]]
     print_k_best_features(fitted_selector, k)
-    print(new_data.shape)
+    # print(new_data.shape)
     return new_data, new_indices
 
 
 def split_data(data):
     y = data["class"]
-    # x = data #To Ömer: Why do we need this?
     x = data.drop("class", axis=1)
     return x, y
 
@@ -90,9 +85,6 @@ def print_k_best_features(fitted_selector, k):
 def apply_mask_to_data(data, indices):
     if isDataTestData(data):
         indices = indices[indices != LABEL_COLUMN_INDICE]
-
-    """ elif isDataTrainingData(data):
-        indices =  """
 
     masked_data = data[data.columns[indices]]
 

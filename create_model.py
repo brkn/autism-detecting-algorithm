@@ -42,7 +42,7 @@ def get_neural_network_model(input_shape):
 
     model.compile(loss='binary_crossentropy',
                   optimizer='adam', metrics=['accuracy'])
-    # optimizer may be adam
+
     return model
 
 

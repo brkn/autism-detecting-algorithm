@@ -13,7 +13,7 @@ def preprocess_data(data, new_indices=None):    # Xtra->Xtra^new
     data = remove_noise_and_outliers(data)
 
     if isDataTrainingData(data):
-        data, new_indices = remove_columns_with_low_variance(data)
+        # data, new_indices = remove_columns_with_low_variance(data)
         x, y = split_data(data)
         x, new_indices = select_k_best_features(x, y)
         return x.values, y.values, new_indices

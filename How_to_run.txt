@@ -12,3 +12,10 @@ Step2:
     
 Step3:
     run python3 main.py
+
+Note:
+    - If the MODEL_TYPE constant is equal to 1, it takes around 2 minutes
+    to train the model and execute the whole program.
+    - It is possible to lower the C_VALUE_FOR_SVM constant
+    to ~500 at create_model.py for faster executation with lower model
+    score.

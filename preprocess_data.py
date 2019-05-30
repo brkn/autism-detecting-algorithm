@@ -9,6 +9,8 @@ from sklearn.preprocessing import StandardScaler
 MAX_VALUE = 1
 MIN_VALUE = 0
 LABEL_COLUMN_INDICE = 595
+NUMBER_OF_BEST_FEATURES = 15
+PCA_VARIANCE_PERCENTAGE = 0.90
 
 
 def preprocess_data(data, new_indices=None, pca_instance=None, scaler_instance=None):    # Xtra->Xtra^new
@@ -52,13 +54,13 @@ def remove_columns_with_low_variance(data, new_indices=[], threshold=(0.001)):
     return new_data, new_indices
 
 
-def select_k_best_features(train_x, train_y, k=20):
+def select_k_best_features(train_x, train_y, k=NUMBER_OF_BEST_FEATURES):
     selector = SelectKBest(k=k)
     fitted_selector = selector.fit(train_x, train_y)
     new_indices = fitted_selector.get_support(indices=True)
     new_data = train_x[train_x.columns[new_indices]]
-    # print_k_best_features(fitted_selector, k)
-    # print(new_data.shape)
+    print_k_best_features(fitted_selector, k)
+    print(new_data.shape)
     return new_data, new_indices
 
 
@@ -99,7 +101,7 @@ def apply_mask_to_data(data, indices):
 
 def get_principal_components(data, pca_instance=None):
     if pca_instance == None:
-        pca_instance = PCA()
+        pca_instance = PCA(PCA_VARIANCE_PERCENTAGE)
         pca_instance.fit(data)
 
     pca_array = pca_instance.transform(data)
@@ -108,6 +110,7 @@ def get_principal_components(data, pca_instance=None):
     new_data = pd.DataFrame(
         pca_array, index=data.index, columns=new_columns)
 
+    # print(new_data.shape)
     return new_data, pca_instance
 
 

@@ -23,7 +23,7 @@ def main():
     predictions = predict_data(model, MODEL_TYPE, test_x)
 
     submission_file_directory = write_output(predictions)
-    submit_to_kaggle(submission_file_directory)
+    # submit_to_kaggle(submission_file_directory)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,12 @@
+Step1: 
+    pip3 install:
+        numpy
+        pandas
+        keras
+        sklearn
+
+Step2:
+    (make sure you didn't move the ./data folder/directory)
+    
+Step3:
+    run python3 main.py
